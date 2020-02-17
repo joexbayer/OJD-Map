@@ -2,7 +2,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 canvas.width = document.body.clientWidth; //document.width is obsolete
 canvas.height = document.body.clientHeight*0.98; //document.height is obsolete
-canvas.style.backgroundImage = "url('OJD_Map.png')";
+canvas.style.backgroundImage = "url('src/OJD_Map.png')";
 canvas.style.backgroundSize = canvas.width+"px "+canvas.height+"px";
 
 
