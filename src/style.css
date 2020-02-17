@@ -1,6 +1,10 @@
 body {
 	margin: 0;
 	padding: 0;
+	-ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 .room-select {
 	z-index: 999;
@@ -13,7 +17,12 @@ body {
 	background-color: white;
 	overflow-x: scroll;
 	color: transparent;
+	-ms-overflow-style: none;
 }
+.room-select::-webkit-scrollbar {
+  display: none;
+}
+
 .room-select:hover, .room-select:active, .room-select:focus {
 	z-index: 999;
 	position: absolute;
