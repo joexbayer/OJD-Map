@@ -3,6 +3,8 @@ A map of Ole-Johan Dahls hus for students at UiO, with A* pathfinding.
 
 Working demo: <a href="https://joexbayer.github.io/OJD-Map/">Click here!</a>
 <br>
+Not fully optimized for mobile use!
+<br>
 
 <h3>Use:</h3>
 To find a room either click it on the map!
