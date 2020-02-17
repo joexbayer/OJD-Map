@@ -387,5 +387,8 @@ var NodesDB = {
  'node379' : {'x': 0.6828125, 'y': 0.12006079027355623, 'description': 'Template'},
  'node380' : {'x': 0.79296875, 'y': 0.7203647416413373, 'description': 'Template'},
  'node381' : {'x': 0.79609375, 'y': 0.682370820668693, 'description': 'Template'},
+ 'node382' : {'x': 0.4609375, 'y': 0.4688385269121813, 'description': 'Template'},
+ 'node383' : {'x': 0.465625, 'y': 0.4801699716713881, 'description': 'Template'},
+ 'node384' : {'x': 0.68828125, 'y': 0.14022662889518414, 'description': 'Template'}
 
 }
