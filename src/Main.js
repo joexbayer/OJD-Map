@@ -112,13 +112,14 @@ function toggleShowDetails(){
 	}
 }
 
-//create mesh between nodes for pathfinding.
-for (var i = 0; i < nodes.length; i++) {
-	nodes[i].checkNodes(nodes, canvas.width, canvas.height);
-}
 
 //main loop
 setInterval(function update(){
+	
+	//create mesh between nodes for pathfinding.
+	for (var i = 0; i < nodes.length; i++) {
+		nodes[i].checkNodes(nodes, canvas.width, canvas.height);
+	}
 
 	//adjust screen if changed
 	if(canvas.width != document.body.clientWidth || canvas.height != document.body.clientHeight*0.98){
