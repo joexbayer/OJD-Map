@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Room OJD</title>
+	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" media="screen and (device-height: 600px)"/>
+	<meta charset="UTF-8">
+</head>
+
+<body style="background-color: black">
+	<button class="button" onclick="toggleShowDetails()">Show Node Tree</button>
+	<div class="room-select">
+		<div class="search-box">
+			<p style="color:white;margin: 0;padding: 0;"><B>Finn Rom:</B></p>
+			<input type="text" name="room-search" id="search-box" placeholder="Rom Navn eller ID">
+		</div>
+		<ul id="ul-list">
+			<!-- placeholder -->
+		</ul>
+
+	</div>
+	<div onclick="mouseClick(event)"style="height: 100vh;width:  100vw;" class="main-field">
+		<div class="canvasdiv">
+				<canvas style="border:2px solid lightgray;" id="myCanvas" width="height: 100vw" height="100vh"></canvas>
+		</div>
+	</div>
+
+</body>
+<script src="Data/RoomDB.js"></script>
+<script src="Pathfinder.js"></script>
+<script src="Rooms.js"></script>
+<script src="Nodes.js"></script>
+<script src="Data/NodesDB.js"></script>
+<script src="Main.js"></script>
+</html>
