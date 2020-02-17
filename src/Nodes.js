@@ -37,7 +37,7 @@ class Node{
 			if (this != nodes[i] && !isFound){
 				var distance_vector = [(this.x*width)-(nodes[i].getCoordinates()[0]*width), (this.y*height)-(nodes[i].getCoordinates()[1]*height)];
 				var distance = Math.floor(Math.sqrt(distance_vector[0]*distance_vector[0] + distance_vector[1]*distance_vector[1]));
-				if(distance < (width/height)*24){
+				if(distance < (width/height)*27){
 					this.connectedNodes.push(nodes[i]);
 				}
 			}
