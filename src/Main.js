@@ -1,5 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+var room_select =document.getElementById("room-select-id");
 canvas.width = document.body.clientWidth; //document.width is obsolete
 canvas.height = document.body.clientHeight*0.98; //document.height is obsolete
 canvas.style.backgroundImage = "url('src/OJD_Map.png')";
@@ -16,7 +17,7 @@ for (var node in NodesDB) {
 	new_node = new Node(NodesDB[node][x], NodesDB[node][y], NodesDB[node][description], node);
     nodes.push(new_node);
 }
-var total_nodes = 363;
+var total_nodes = 382;
 
 //convert rooms from DB
 var rooms = [];
@@ -60,8 +61,7 @@ function mouseClick(e){
 			}
 		}
 
-	/* Code for adding nodes
-	x=e.clientX/canvas.width;
+	/*x=e.clientX/canvas.width;
 	y=e.clientY/canvas.height;
 	var nodeinf = {'x':x,'y':y,'description':'Template'};
 	tempNode_list['node'+total_nodes] = nodeinf;
@@ -69,6 +69,8 @@ function mouseClick(e){
 	total_nodes++;*/
 }
 
+//room select scroll to top on mouse leave
+room_select.addEventListener("mouseleave", function autoScroll() {room_select.scrollTop = 0;});
 
 //add all Rooms too UL list in html file
 var search_box_value = document.getElementById("search-box");
@@ -111,16 +113,14 @@ function toggleShowDetails(){
 		showDetails = true;
 	}
 }
+//create mesh between nodes for pathfinding.
+for (var i = 0; i < nodes.length; i++) {
+	nodes[i].checkNodes(nodes, forbiddenNodes, canvas.width, canvas.height);
+}
 
 
 //main loop
 setInterval(function update(){
-	
-	//create mesh between nodes for pathfinding.
-	for (var i = 0; i < nodes.length; i++) {
-		nodes[i].checkNodes(nodes, canvas.width, canvas.height);
-	}
-
 	//adjust screen if changed
 	if(canvas.width != document.body.clientWidth || canvas.height != document.body.clientHeight*0.98){
 		canvas.width = document.body.clientWidth;
@@ -128,6 +128,10 @@ setInterval(function update(){
 		canvas.style.backgroundSize = canvas.width+"px "+canvas.height+"px";
 		screen_width = canvas.width;
 		screen_height = canvas.height;
+		//create mesh between nodes for pathfinding.
+		for (var i = 0; i < nodes.length; i++) {
+			nodes[i].checkNodes(nodes, forbiddenNodes, canvas.width, canvas.height);
+		}
 	}
 
 	//try to draw paths if one exists
