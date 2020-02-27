@@ -1,8 +1,12 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var room_select =document.getElementById("room-select-id");
-canvas.width = document.body.clientWidth; //document.width is obsolete
-canvas.height = document.body.clientHeight*0.98; //document.height is obsolete
+
+var width_use = (document.body.clientHeight*0.98)*1.7777;
+var height_use = (document.body.clientWidth)*0.5625;
+
+canvas.width = width_use; //document.width is obsolete
+canvas.height = height_use;
 canvas.style.backgroundImage = "url('src/OJD_Map.png')";
 canvas.style.backgroundSize = canvas.width+"px "+canvas.height+"px";
 
@@ -122,10 +126,13 @@ for (var i = 0; i < nodes.length; i++) {
 //main loop
 setInterval(function update(){
 	//adjust screen if changed
-	if(canvas.width != document.body.clientWidth || canvas.height != document.body.clientHeight*0.98){
+	
+	if(canvas.width != width_use || canvas.height != height_use){		
+		height_use = (document.body.clientWidth)/1.7777;
 		canvas.width = document.body.clientWidth;
-		canvas.height = document.body.clientHeight*0.98;
+		canvas.height = height_use;
 		canvas.style.backgroundSize = canvas.width+"px "+canvas.height+"px";
+
 		screen_width = canvas.width;
 		screen_height = canvas.height;
 		//create mesh between nodes for pathfinding.

@@ -37,11 +37,7 @@ class Node{
 				} else {
 				}*/
 				//todo
-				if(width>height){
-					var node_distance = (width/height)*27;
-				} else {
-					var node_distance = (height/width)*25;
-				}
+				var node_distance = width/33;
 				var distance_vector = [(this.x*width)-(nodes[i].getCoordinates()[0]*width), (this.y*height)-(nodes[i].getCoordinates()[1]*height)];
 				var distance = Math.floor(Math.sqrt(distance_vector[0]*distance_vector[0] + distance_vector[1]*distance_vector[1]));
 				if(distance < node_distance){
