@@ -128,7 +128,7 @@ setInterval(function update(){
 	//adjust screen if changed
 	
 	if(canvas.width != width_use || canvas.height != height_use){		
-		height_use = (document.body.clientWidth)/1.7888;
+		height_use = (document.body.clientWidth)/1.8888;
 		canvas.width = document.body.clientWidth;
 		canvas.height = height_use;
 		canvas.style.backgroundSize = canvas.width+"px "+canvas.height+"px";
