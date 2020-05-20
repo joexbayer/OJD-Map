@@ -2,7 +2,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var room_select =document.getElementById("room-select-id");
 
-var width_use = (document.body.clientHeight*0.98)*1.7777;
+var width_use = (document.body.clientHeight*0.98)*1.9777;
 var height_use = (document.body.clientWidth)*0.5625;
 
 canvas.width = width_use; //document.width is obsolete
@@ -128,8 +128,8 @@ setInterval(function update(){
 	//adjust screen if changed
 	
 	if(canvas.width != width_use || canvas.height != height_use){		
-		height_use = (document.body.clientWidth)/1.8888;
-		canvas.width = document.body.clientWidth;
+		height_use = (document.body.clientWidth)/1.99888;
+		canvas.width = document.body.clientWidth*0.99;
 		canvas.height = height_use;
 		canvas.style.backgroundSize = canvas.width+"px "+canvas.height+"px";
 
